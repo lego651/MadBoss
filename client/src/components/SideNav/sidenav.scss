@@ -1,0 +1,94 @@
+@import "../../app.scss";
+
+.sidenav-wrapper {
+  background-color: $bg-light;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 200px;
+  height: 100vh;
+  z-index: 999;
+  // box-shadow: 0px 0px 2px 1px rgba(0,0,0,0.1);
+  border-right: solid 0.8px rgba(0,0,0,0.1);
+
+  .sideLogo {
+    display: flex;
+    // align-items: center;
+    // justify-content: center;
+    margin-left: 25px;
+    // background-color: blue;
+    img {
+      margin-top: 50px;
+      height: 30px;
+    }
+  }
+  .nav-links {
+    margin-top: 50px;
+    // background-color: yellow;
+
+    .nav-link {
+      padding: 0;
+      a {
+        padding: 10px;
+        padding-left: 25px;
+        // background-color: green;
+        display: flex;
+        align-items: center;
+        color: $icon-gray;
+        // margin-left: 10px;
+        text-decoration: none;
+        font-size: 20px;
+        &:hover {
+          border-left: 4px solid $theme-color-main-light;
+          padding-left: 21px;
+        }
+        .nav-icon {
+          text-align: center;
+          width: 30px;
+        }
+        .nav {
+          font-size: 15px;
+          font-family: $h-font-3;
+          color: $theme-color-light-gray;
+          margin-left: 15px;
+        }
+      }
+      a.active {
+        border-left: 4px solid $theme-color-main;
+        padding-left: 20px;
+      }
+    }
+  }
+  .create-plan {
+    // background-color: yellow;
+    position: fixed;
+    bottom: 30px;
+    width: 180px;
+    margin-left: 10px;
+    font-size: 16px;
+    a {
+      color: $icon-gray;
+      text-decoration: none;
+      padding: 5px 10px;
+      padding-left: 20px;
+      // background-color: green;
+      display: flex;
+      align-items: center;
+      .nav-icon {
+        // text-align: center;
+        width: 20px;
+        // background-color: blue;
+      }
+      .create {
+        font-size: 15px;
+        font-family: $h-font-3;
+        color: $theme-color-light-gray;
+        margin-left: 10px;
+      }
+    }
+    a:hover {
+      background-color: rgba(0,0,0,0.05);
+      border-radius: 12px;
+    }
+  }
+}

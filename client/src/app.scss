@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Duru+Sans|Josefin+Sans|Merriweather|Open+Sans|Roboto+Slab|Ubuntu');
+
+$theme-color-main: #339AF0; /* blue */
+$theme-color-main-light: #C4E9F1; /* light blue */
+$theme-color-main-success: rgb(65,197,154); /* green */
+$theme-color-dark-gray: #495057; /* Dark Gray */
+$theme-color-light-gray: #868E96; /* Light Gray */
+$bg-light: #F8FBFD;
+$bg-dark: #383737;
+$btn-dark: rgba(5, 5, 5, 0.85);
+$icon-gray: rgba(126, 126, 126, 0.55);
+$h1-gray: rgb(73, 80, 87);
+$h2-gray: rgb(134, 142, 150);
+
+$h-font-1: 'Merriweather', serif;
+$h-font-2: 'Josefin Sans', sans-serif;
+$h-font-3: 'Roboto Slab', serif;
+$p-font-1: 'Ubuntu', sans-serif;
+$p-font-2: 'Open Sans', sans-serif;
+$p-font-3: 'Duru Sans', sans-serif;
+
+$break-md: 770px;
+
+body,
+html,
+div#root,
+h1
+{
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  // color: red;
+}

@@ -1,0 +1,18 @@
+@import "../../app.scss";
+
+.toggle-sidenav-wrapper {
+  z-index: 99;
+  cursor: pointer;
+  font-size: 20px;
+  color: $theme-color-light-gray;
+  position: fixed;
+  left: 30px;
+  top: 48px;
+}
+.toggle-sidenav-wrapper.withNav {
+  z-index: 99;
+  cursor: pointer;
+  position: fixed;
+  left: 250px;
+  top: 48px;
+}
