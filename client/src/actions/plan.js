@@ -27,7 +27,7 @@ export function createPlan(planObj) {
 }
 
 // GET -> Read Plan for certain userId
-export function getUserPlan(toke6n=null){
+export function getUserPlan(token=null){
   return function(dispatch) {
     if(token && token.length > 0) {
       const URL = config.serverUrl + '/plans'
