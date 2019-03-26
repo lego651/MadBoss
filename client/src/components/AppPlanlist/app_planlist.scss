@@ -1,0 +1,50 @@
+@import "../../app.scss";
+
+.app-planlist-wrapper {
+  .planlist-header {
+    // background-color: yellow;
+    margin-top: 20px;
+    // margin-bottom: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    .left {
+      margin-left: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      line-height: 16px;
+      letter-spacing: 0px;
+      color: $h2-gray;
+      font-family: $p-font-1;
+    }
+    .right {
+      font-size: 13px;
+      a {
+        color: $h2-gray;
+        text-decoration: none;
+        padding: 5px 10px;
+        padding-left: 13px;
+        // background-color: green;
+        display: flex;
+        align-items: center;
+        .nav-icon {
+          // text-align: center;
+          width: 12px;
+          // background-color: blue;
+        }
+        .create {
+          font-size: 13px;
+          font-family: $p-font-2;
+          color: $theme-color-light-gray;
+          margin-left: 10px;
+        }
+      }
+      a:hover {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 12px;
+      }
+    }
+  }
+}

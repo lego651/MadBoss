@@ -28,13 +28,13 @@
     border: none;
     padding: 0;
     font-weight: 600;
-    font-size: 26px;
+    font-size: 22px;
   }
   .calendar input {
     border: 1px solid #ccc;
     width: 250px;
-    height: 50px;
-    font-size: 22px;
+    height: 40px;
+    font-size: 18px;
     padding-left: 10px;
   }
 
@@ -47,7 +47,7 @@
     -webkit-box-pack: center;
     justify-content: center;
     white-space: nowrap;
-    height: 50px;
+    height: 40px;
     box-sizing: border-box;
     pointer-events: auto;
     cursor: pointer;

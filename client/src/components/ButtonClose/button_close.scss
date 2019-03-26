@@ -1,0 +1,25 @@
+@import "../../app.scss";
+
+.button-close-wrapper {
+  z-index: 99;
+  position: fixed;
+  top: 50px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  a {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: $icon-gray;
+  }
+  cursor: pointer;
+  &:hover {
+    background-color: white;
+    border-radius: 50%;
+    -webkit-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.10);
+    box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.10);
+  }
+}

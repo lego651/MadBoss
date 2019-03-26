@@ -6,6 +6,7 @@ import passportInitialize from '../services/passportInitialize'
 import * as AuthController from '../controllers/auth'
 import * as TaskController from '../controllers/task'
 import * as UserinfoController from '../controllers/userinfo'
+import * as PlanController from '../controllers/plan'
 // import generateToken from '../services/token-jwt'
 const authService = require('../services/AuthService');
 import User from '../models/user'
@@ -20,19 +21,18 @@ const requireAuth = passport.authenticate('jwt', { session: false })
 
 
 export default function(app){
-  app.get('/userinfo', authService.validateUser, UserinfoController.userinfo)
-  app.post('/username', authService.validateUser, UserinfoController.updateUsername)
-
+  // test req.user
+  app.get('/email', authService.validateUser, function(req, res){
+    res.send({ 'message': 'protected' })
+  })
   // test Routerss
   app.get('/test', function(req, res){
     res.send({ message: 'Test Route'})
   })
 
-  // test req.user
-  app.get('/email', authService.validateUser, function(req, res){
-    res.send({ 'message': 'protected' })
-  })
-
+  // User
+  app.get('/userinfo', authService.validateUser, UserinfoController.userinfo)
+  app.post('/username', authService.validateUser, UserinfoController.updateUsername)
   // auth Google
   app.post('/auth/google', passport.authenticate('google-token', {session: false}), (req, res, next) => {
     if (!req.user) {
@@ -67,8 +67,13 @@ export default function(app){
   //     }
   // });
 
-  // tasks APIS
+  // tasks APIs
   app.post('/tasks', authService.validateUser, TaskController.addTask)
   app.post('/delete', authService.validateUser, TaskController.deleteTask)
   app.get('/tasks', authService.validateUser, TaskController.searchTask)
+
+  // plan APIs
+  app.post('/plans', authService.validateUser, PlanController.createPlan)
+  app.get('/plans', authService.validateUser, PlanController.getPlan)
+  app.get('/plans/:id', authService.validateUser, PlanController.getPlanDetail)
 }

@@ -34,10 +34,10 @@
         // background-color: green;
         display: flex;
         align-items: center;
-        color: $icon-gray;
+        color: $h2-gray;
         // margin-left: 10px;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 16px;
         &:hover {
           border-left: 4px solid $theme-color-main-light;
           padding-left: 21px;
@@ -67,7 +67,7 @@
     margin-left: 10px;
     font-size: 16px;
     a {
-      color: $icon-gray;
+      color: $h2-gray;
       text-decoration: none;
       padding: 5px 10px;
       padding-left: 20px;

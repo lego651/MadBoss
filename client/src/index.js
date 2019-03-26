@@ -19,14 +19,14 @@ import thunk from 'redux-thunk'
 import thunkMiddleware from 'redux-thunk'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faIgloo, faUser, faHome, faBars, faFileSignature } from '@fortawesome/free-solid-svg-icons'
+import { faIgloo, faUser, faHome, faBars, faFileSignature, faTimes } from '@fortawesome/free-solid-svg-icons'
 
 
 import App from './components/App'
 import rootReducer from './reducers'
 import { RouteMap } from './router/routeMap'
 
-library.add(faIgloo, faUser, faHome, faBars, faFileSignature)
+library.add(faIgloo, faUser, faHome, faBars, faFileSignature, faTimes)
 
 const store = createStore(
   rootReducer,

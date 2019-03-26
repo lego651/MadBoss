@@ -1,0 +1,4 @@
+export default {
+  GET_USER_PLAN: 'GET_USER_PLAN',
+  GET_PLAN_DETAIL: 'GET_PLAN_DETAIL',
+}

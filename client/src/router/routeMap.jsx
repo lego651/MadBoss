@@ -8,6 +8,7 @@ import LoginPage from '../containers/LoginPage'
 import AppPage from '../containers/AppPage'
 import AccountPage from '../containers/AccountPage'
 import CreatePage from '../containers/CreatePage'
+import PlanPage from '../containers/PlanPage'
 import SideNav from '../components/SideNav'
 import Tasks from '../pages/Tasks'
 import About from '../pages/About'
@@ -29,6 +30,7 @@ export const RouteMap = () => {
           <Route exact path="/app" component={AppPage}/>
           <Route exact path="/account" component={RequireAuth(AccountPage)}/>
           <Route exact path="/create" component={RequireAuth(CreatePage)}/>
+          <Route exact path={`/plan/:id`} component={RequireAuth(PlanPage)}/>
           <Route exact path="/side" component={SideNav}/>
           <Route exact path="/tasks" component={Tasks}/>
           <Route exact path="/about" component={About}/>

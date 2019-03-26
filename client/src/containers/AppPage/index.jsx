@@ -5,6 +5,7 @@ import axios from 'axios'
 import config from '../../config'
 import { connect } from 'react-redux'
 import { signIn, getUserInfo, reducerLoggedIn } from '../../actions/auth'
+import { getUserPlan } from '../../actions/plan'
 import SideNav from '../../components/SideNav'
 import AppContent from '../../components/AppContent'
 import ToggleSideNav from '../../components/ToggleSideNav'
@@ -19,12 +20,13 @@ class AppPage extends React.Component {
       };
   }
   componentDidMount(){
-    const reducerLoggedIn = this.props.reducerLoggedIn
-    const getUserInfo = this.props.getUserInfo
+    // const reducerLoggedIn = this.props.reducerLoggedIn
+    // const getUserInfo = this.props.getUserInfo
     const token = localStorage.getItem('token')
     if(token && token.length > 0){
-      reducerLoggedIn()
-      getUserInfo(token)
+      this.props.reducerLoggedIn()
+      this.props.getUserInfo(token)
+      this.props.getUserPlan(token)
     } else {
       console.log('No token in Header Container')
     }
@@ -38,9 +40,9 @@ class AppPage extends React.Component {
     let withNav = this.state.showSidenav
     let content = this.props.user
         ? <AppContent gmail={this.props.user.email}
-                      username={this.props.user.username} />
+                      username={this.props.user.username}
+                      planList={this.props.planList} />
         : <div className="c"> loading... </div>
-
     return(
       <div className="app-page-wrapper">
         <ToggleSideNav
@@ -57,11 +59,13 @@ class AppPage extends React.Component {
 
 const mapStateToProps = (state) => ({
   todos: state.todos,
-  user: state.auth.user
+  user: state.auth.user,
+  planList: state.plan.planList
 })
 const mapDispatchToProps = (dispatch) => ({
   reducerLoggedIn: () => dispatch(reducerLoggedIn()),
   getUserInfo: (token) => dispatch(getUserInfo(token)),
+  getUserPlan: (token) => dispatch(getUserPlan(token))
 })
 export default connect(
   mapStateToProps,
