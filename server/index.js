@@ -9,6 +9,7 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import cors from 'cors';
 import passport from 'passport';
+const formData = require('express-form-data')
 
 import config from './config';
 import router from './routes/router';
@@ -101,6 +102,8 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (user, done) {
     done(null, user);
 });
+
+app.use(formData.parse())
 
 router(app);
 

@@ -13,6 +13,7 @@ import SideNav from '../components/SideNav'
 import Tasks from '../pages/Tasks'
 import About from '../pages/About'
 import Test from '../components/Test'
+import TestUpload from '../pages/TestUploadImage'
 
 // import ComposedAuth from '../middlewares/ComposedAuth';
 import RequireAuth from '../middlewares/RequireAuth'
@@ -35,6 +36,7 @@ export const RouteMap = () => {
           <Route exact path="/tasks" component={Tasks}/>
           <Route exact path="/about" component={About}/>
           <Route exact path="/test" component={RequireAuth(Test)}/>
+          <Route exact path="/upload" component={TestUpload}/>
         </Switch>
       </BrowserRouter>
     </div>

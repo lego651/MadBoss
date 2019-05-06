@@ -2,6 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import passport from 'passport'
 import passportInitialize from '../services/passportInitialize'
+const cloudinary = require('cloudinary')
+const formData = require('express-form-data')
 
 import * as AuthController from '../controllers/auth'
 import * as TaskController from '../controllers/task'
@@ -16,8 +18,11 @@ passportInitialize()
 // initialize middleware by passport package
 const requireAuth = passport.authenticate('jwt', { session: false })
 
-
-
+cloudinary.config({
+  cloud_name: 'dutal5oer',
+  api_key: '333752729912466',
+  api_secret: 'gVYZ3aNx0MmMKITHdyD9e9-71YI'
+})
 
 
 export default function(app){
@@ -66,6 +71,23 @@ export default function(app){
   //         res.json(req.authData);
   //     }
   // });
+
+  // Cloudinary Upload Image API
+  app.post('/image-upload', (req, res) => {
+    if(!req.files) {
+      console.log('Failed on req.files')
+    }
+    console.log(req.files)
+    console.log(req.body)
+    const values = Object.values(req.files)
+    console.log(values)
+    const promises = values.map(image => cloudinary.uploader.upload(image.path))
+
+    Promise
+      .all(promises)
+      .then(results => res.json(results))
+      .catch((err) => res.status(400).json(err))
+  })
 
   // tasks APIs
   app.post('/tasks', authService.validateUser, TaskController.addTask)
